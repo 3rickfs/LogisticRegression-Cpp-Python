@@ -1,3 +1,7 @@
+/* Logistic algorithm in C++
+ * 
+ * */
+
 #include<iostream>
 #include<math.h>
 #include<vector>
