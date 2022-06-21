@@ -1,5 +1,8 @@
 /* Logistic algorithm in C++
- * 
+ * ------------------------
+ *
+ * To make hyperparameters be setup from python 
+ *
  * */
 
 #include<iostream>
