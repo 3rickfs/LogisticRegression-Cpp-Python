@@ -8,16 +8,9 @@
 #include<iostream>
 #include<math.h>
 #include<vector>
+#include"logistic.hpp"
 
 using namespace std;
-
-class CPPLogisticRegression{
-	public:
-		//Method for updating the weights and bias
-		vector<double> updateWeightsAndBias(int noOfIterations, int noOfRows, int noOfColumns);
-		//method for the prediction
-		double predict(vector<double> vW, double* X_train_test);
-};
 
 vector<double> CPPLogisticRegression::updateWeightsAndBias(int noOfIterations, int noOfRows, int noOfColumns){
 	double row_pred_diff = 0.0;
@@ -49,7 +42,7 @@ vector<double> CPPLogisticRegression::updateWeightsAndBias(int noOfIterations, i
 		for (int i=0; i<noOfRows; i++){
 			double Wx = 0.0;
 			for (int j=0; j<noOfColumns; j++){
-				Wx = W[j] * X_train[i][j];
+				Wx += W[j] * X_train[i][j];
 			}
 			//computing (sigma(W.x)+b)-Y
 			row_pred_diff = (1/(1 + exp(-(Wx + bias)))) - Y[i];
